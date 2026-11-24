@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mitra Matera menyediakan jasa administrasi HR dan operasional untuk perusahaan kecil dan menengah.">
+  <title>Matera Matera | Mitra Administrasi Bisnis Anda</title>
+  <style>
+    :root {
+      --navy: #12365b;
+      --blue: #1e5b91;
+      --blue-soft: #eaf3fb;
+      --gold: #f2bd35;
+      --ink: #1d2c3d;
+      --muted: #64748b;
+      --white: #fff;
+      --line: #dce6ef;
+      --shadow: 0 12px 32px rgba(18,54,91,.09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); line-height: 1.6; background: #fff; }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1120px, calc(100% - 40px)); margin: auto; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.96); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+    .nav { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; color: var(--navy); letter-spacing: .5px; }
+    .brand-mark { width: 42px; height: 42px; border-radius: 13px; display: grid; place-items: center; color: var(--navy); background: var(--gold); font-weight: 900; font-size: 20px; }
+    .brand small { display: block; font-size: 10px; color: var(--muted); letter-spacing: 1.3px; font-weight: 700; margin-top: -3px; }
+    nav { display: flex; align-items: center; gap: 25px; font-size: 14px; font-weight: 700; color: #42546a; }
+    nav a:hover { color: var(--blue); }
+    .nav-cta, .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 19px; border-radius: 9px; font-weight: 700; background: var(--gold); color: #17283b; border: 0; cursor: pointer; }
+    .menu-btn { display: none; border: 1px solid var(--line); background: white; padding: 9px 12px; border-radius: 8px; font-size: 20px; }
+    .hero { background: linear-gradient(120deg, #f5f9fd 0%, #eaf3fb 58%, #fff8e4 100%); padding: 88px 0 82px; overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 55px; align-items: center; }
+    .eyebrow { display: inline-block; color: var(--blue); font-weight: 800; letter-spacing: 1.5px; font-size: 12px; text-transform: uppercase; }
+    h1 { color: var(--navy); font-size: clamp(38px, 5vw, 58px); line-height: 1.08; margin: 15px 0 20px; letter-spacing: -1.7px; }
+    h1 span { color: var(--blue); }
+    .hero p { color: #536579; font-size: 18px; max-width: 610px; margin: 0 0 28px; }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary { background: var(--navy); color: white; }
+    .btn-outline { border: 1px solid #9bb4ca; background: white; color: var(--navy); }
+    .hero-card { background: white; border: 1px solid #e1eaf2; border-radius: 24px; padding: 28px; box-shadow: var(--shadow); position: relative; }
+    .hero-card:before { content: ""; position: absolute; width: 110px; height: 110px; background: var(--gold); border-radius: 50%; opacity: .22; right: -25px; top: -25px; }
+    .hero-card h3 { margin: 0 0 17px; color: var(--navy); font-size: 20px; position: relative; }
+    .mini-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; position: relative; }
+    .mini { padding: 15px; border-radius: 13px; background: var(--blue-soft); min-height: 105px; }
+    .mini b { display: block; color: var(--navy); font-size: 14px; margin: 8px 0 3px; }
+    .mini span { font-size: 12px; color: var(--muted); }
+    .symbol { font-size: 23px; }
+    section { padding: 78px 0; }
+    .section-head { max-width: 700px; margin: 0 auto 38px; text-align: center; }
+    .section-head h2 { color: var(--navy); font-size: clamp(28px, 3vw, 38px); line-height: 1.2; margin: 10px 0 12px; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 55px; align-items: center; }
+    .about-panel { background: var(--navy); color: white; border-radius: 22px; padding: 34px; min-height: 280px; display: flex; flex-direction: column; justify-content: space-between; }
+    .about-panel strong { font-size: 27px; line-height: 1.25; }
+    .about-panel p { color: #d7e5f1; margin-bottom: 0; }
+    .about-copy h2 { color: var(--navy); font-size: 34px; line-height: 1.2; margin: 0 0 17px; }
+    .about-copy p { color: var(--muted); }
+    .checklist { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 22px; }
+    .check { font-weight: 700; color: #344b62; font-size: 14px; }
+    .check:before { content: "✓"; color: #b48308; font-weight: 900; margin-right: 9px; }
+    .services { background: #f7fafd; }
+    .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .service { background: white; border: 1px solid #e5edf4; border-radius: 17px; padding: 25px; box-shadow: 0 5px 18px rgba(18,54,91,.035); }
+    .service-icon { width: 47px; height: 47px; border-radius: 13px; background: var(--blue-soft); display: grid; place-items: center; font-size: 23px; }
+    .service h3 { color: var(--navy); margin: 15px 0 8px; font-size: 18px; }
+    .service p { color: var(--muted); font-size: 14px; margin: 0; }
+    .benefit-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .benefit { text-align: center; padding: 22px 16px; border: 1px solid var(--line); border-radius: 16px; }
+    .benefit .symbol { color: var(--blue); font-size: 28px; }
+    .benefit h3 { color: var(--navy); font-size: 16px; margin: 9px 0 5px; }
+    .benefit p { color: var(--muted); font-size: 13px; margin: 0; }
+    .process { background: var(--blue-soft); }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .step { background: white; border-radius: 15px; padding: 22px; }
+    .step-num { color: #a47708; font-weight: 900; font-size: 13px; letter-spacing: 1px; }
+    .step h3 { color: var(--navy); font-size: 17px; margin: 8px 0; }
+    .step p { color: var(--muted); font-size: 13px; margin: 0; }
+    .contact { background: var(--navy); color: white; }
+    .contact-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 50px; align-items: center; }
+    .contact h2 { font-size: 36px; line-height: 1.2; margin: 10px 0 15px; }
+    .contact p { color: #d4e1ed; }
+    .contact-box { background: white; color: var(--ink); border-radius: 18px; padding: 25px; }
+    .contact-box h3 { color: var(--navy); margin-top: 0; }
+    .contact-row { padding: 11px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+    .contact-row:last-child { border: 0; }
+    .contact-row b { display: block; color: var(--navy); }
+    footer { background: #0c2947; color: #d5e1eb; padding: 22px 0; font-size: 12px; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 15px; flex-wrap: wrap; }
+    @media (max-width: 850px) {
+      nav { display: none; position: absolute; top: 76px; left: 0; right: 0; background: white; padding: 18px 22px; border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 16px; }
+      nav.open { display: flex; }
+      .menu-btn { display: block; }
+      .nav-cta { display: none; }
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 30px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .benefit-grid, .steps { grid-template-columns: repeat(2, 1fr); }
+      .hero { padding: 65px 0; }
+    }
+    @media (max-width: 560px) {
+      .container { width: min(100% - 30px, 1120px); }
+      section { padding: 58px 0; }
+      .service-grid, .benefit-grid, .steps, .checklist { grid-template-columns: 1fr; }
+      .hero-card { padding: 20px; }
+      .mini-grid { gap: 8px; }
+      .mini { padding: 12px; }
+      .about-panel { min-height: 230px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#beranda" aria-label="Mitra Matera Beranda">
+      <span class="brand-mark">MM</span>
+      <span>MITRA MATERA<small>MITRA ADMINISTRASI BISNIS</small></span>
+    </a>
+    <nav id="mainNav">
+      <a href="#beranda">Beranda</a>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#layanan">Layanan</a>
+      <a href="#keunggulan">Keunggulan</a>
+      <a href="#kontak">Hubungi Kami</a>
+    </nav>
+    <a class="nav-cta" href="#kontak">Konsultasi Layanan</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Buka menu">☰</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="beranda">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Layanan Administrasi untuk Bisnis Anda</span>
+        <h1>Administrasi Lebih Tertib, <span>Bisnis Lebih Fokus.</span></h1>
+        <p>Mitra Matera membantu perusahaan kecil dan menengah mengelola administrasi HR dan operasional secara praktis, rapi, dan profesional. Anda dapat lebih fokus mengembangkan bisnis, sementara kebutuhan administrasi ditangani dengan baik.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#layanan">Lihat Layanan</a>
+          <a class="btn btn-outline" href="#kontak">Hubungi Kami</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Dukungan administrasi yang Anda butuhkan</h3>
+        <div class="mini-grid">
+          <div class="mini"><span class="symbol">👥</span><b>Administrasi HR</b><span>Data dan dokumen karyawan</span></div>
+          <div class="mini"><span class="symbol">🧮</span><b>Administrasi Payroll</b><span>Rekap gaji dan lembur</span></div>
+          <div class="mini"><span class="symbol">📅</span><b>Absensi</b><span>Kehadiran dan keterlambatan</span></div>
+          <div class="mini"><span class="symbol">📁</span><b>Dokumen</b><span>Arsip dan pengendalian dokumen</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tentang">
+    <div class="container about-grid">
+      <div class="about-panel">
+        <span class="eyebrow" style="color:#f2bd35">Mitra Matera</span>
+        <strong>Mitra kerja untuk administrasi yang lebih teratur dan efisien.</strong>
+        <p>Solusi yang fleksibel mengikuti kebutuhan dan skala usaha Anda.</p>
+      </div>
+      <div class="about-copy">
+        <span class="eyebrow">Tentang Kami</span>
+        <h2>Mendukung perusahaan agar dapat fokus pada kegiatan utamanya.</h2>
+        <p>Mitra Matera merupakan penyedia jasa administrasi HR dan bisnis yang membantu perusahaan dalam pengelolaan data, pencatatan, pelaporan, serta dokumentasi. Layanan dirancang secara fleksibel sesuai kebutuhan perusahaan, sehingga perusahaan dapat memperoleh dukungan administrasi tanpa harus menambah beban pengelolaan internal.</p>
+        <div class="checklist">
+          <div class="check">Pendekatan praktis</div>
+          <div class="check">Layanan fleksibel</div>
+          <div class="check">Administrasi terstruktur</div>
+          <div class="check">Menjaga kerahasiaan data</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="layanan">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Layanan Kami</span>
+        <h2>Dukungan administrasi sesuai kebutuhan usaha</h2>
+        <p>Pilih layanan yang dibutuhkan. Ruang lingkup dan pola kerja dapat disesuaikan melalui kesepakatan bersama.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service"><div class="service-icon">👥</div><h3>Administrasi HR</h3><p>Pengelolaan database karyawan, administrasi kontrak kerja, data cuti, dan pembaruan informasi karyawan.</p></article>
+        <article class="service"><div class="service-icon">🧮</div><h3>Administrasi Payroll</h3><p>Rekapitulasi komponen gaji, lembur, tunjangan, dan potongan berdasarkan data serta ketentuan perusahaan.</p></article>
+        <article class="service"><div class="service-icon">📅</div><h3>Pengelolaan Absensi</h3><p>Rekap kehadiran, keterlambatan, ketidakhadiran, dan data pendukung administrasi waktu kerja.</p></article>
+        <article class="service"><div class="service-icon">📊</div><h3>Pelaporan HR</h3><p>Penyusunan laporan HR bulanan dan tahunan, termasuk ringkasan data karyawan dan kehadiran.</p></article>
+        <article class="service"><div class="service-icon">🔎</div><h3>Administrasi Rekrutmen</h3><p>Dukungan administrasi lowongan, penerimaan lamaran, penjadwalan seleksi, dan dokumentasi proses rekrutmen.</p></article>
+        <article class="service"><div class="service-icon">🗂️</div><h3>Pengendalian Dokumen</h3><p>Penataan, pencatatan, pengarsipan, dan pemantauan dokumen perusahaan dalam bentuk digital maupun fisik.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section id="keunggulan">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Mengapa Mitra Matera</span>
+        <h2>Administrasi yang tepat membantu bisnis berjalan lebih baik.</h2>
+        <p>Kami mengutamakan ketelitian, komunikasi, dan solusi yang sesuai dengan kebutuhan setiap klien.</p>
+      </div>
+      <div class="benefit-grid">
+        <div class="benefit"><div class="symbol">✓</div><h3>Profesional</h3><p>Pekerjaan dilakukan dengan alur dan standar administrasi yang jelas.</p></div>
+        <div class="benefit"><div class="symbol">◷</div><h3>Efisien</h3><p>Membantu menghemat waktu untuk pekerjaan administrasi rutin.</p></div>
+        <div class="benefit"><div class="symbol">↔</div><h3>Fleksibel</h3><p>Ruang lingkup layanan dapat disesuaikan dengan skala usaha.</p></div>
+        <div class="benefit"><div class="symbol">◇</div><h3>Terpercaya</h3><p>Menjaga kerahasiaan informasi dan dokumen perusahaan.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="process" id="cara-kerja">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Cara Kerja</span>
+        <h2>Proses sederhana, mulai dari kebutuhan Anda.</h2>
+        <p>Kami memulai dengan memahami kebutuhan, menyepakati ruang lingkup, lalu menjalankan layanan dan melaporkan hasilnya.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step-num">TAHAP 01</div><h3>Konsultasi</h3><p>Diskusikan kebutuhan dan kendala administrasi perusahaan Anda.</p></div>
+        <div class="step"><div class="step-num">TAHAP 02</div><h3>Penawaran</h3><p>Tentukan ruang lingkup, jadwal, hasil pekerjaan, dan biaya layanan.</p></div>
+        <div class="step"><div class="step-num">TAHAP 03</div><h3>Pelaksanaan</h3><p>Pekerjaan dilakukan berdasarkan data dan kesepakatan yang telah disetujui.</p></div>
+        <div class="step"><div class="step-num">TAHAP 04</div><h3>Pelaporan</h3><p>Hasil pekerjaan disampaikan dan dievaluasi bersama klien.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="kontak">
+    <div class="container contact-grid">
+      <div>
+        <span class="eyebrow" style="color:#f2bd35">Hubungi Mitra Matera</span>
+        <h2>Mari diskusikan kebutuhan administrasi perusahaan Anda.</h2>
+        <p>Setiap perusahaan memiliki kebutuhan yang berbeda. Hubungi kami untuk membahas bentuk dukungan administrasi yang paling sesuai dengan kegiatan usaha Anda.</p>
+        <a class="btn" href="mailto:ALAMAT_EMAIL_ANDA">Kirim Email</a>
+      </div>
+      <div class="contact-box">
+        <h3>Informasi Kontak</h3>
+        <div class="contact-row"><b>Nama Usaha</b>Mitra Matera</div>
+        <div class="contact-row"><b>Email</b>Akholil.moker@gmail.com</div>
+        <div class="contact-row"><b>Telepon / WhatsApp</b>08117508087</div>
+        <div class="contact-row"><b>Wilayah Layanan</b>Mojokerto dan sekitarnya</div>
+        <p style="font-size:12px;margin-bottom:0">Silakan ganti informasi contoh ini dengan kontak resmi sebelum website dipublikasikan.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Mitra Matera. Hak cipta dilindungi.</span>
+    <span>Mitra Administrasi Bisnis Anda</span>
+  </div>
+</footer>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const nav = document.getElementById('mainNav');
+  menuBtn.addEventListener('click', () => nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => nav.classList.remove('open')));
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
